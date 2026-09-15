@@ -1,0 +1,144 @@
+html{
+    scroll-behavior: smooth;/*This adds a smooth scrolling effect.*/
+    padding: 20px;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+
+.card,nav,button{
+    border-radius: 5px;
+}
+
+.card,nav{
+    box-shadow: 12px 8px 0 3px;
+}
+
+.card{
+    padding: 30px;
+    margin: 20px;
+    animation-name: rotate;/*this is the animation name that i use with the rotate keyframes */
+    animation-duration: 1s;
+}
+
+nav {
+    background-color: #f8f8da;
+    padding-bottom: 1px;
+
+}
+
+nav a{
+    display: flex;
+    text-decoration: none;
+    margin: 9px 0 14px 19px;
+    padding-top: 7px;
+    padding-bottom: 2px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+nav a:focus{
+    background-color: #67ff6e;
+}
+
+img{
+    max-width: 100%;
+}
+
+section img{
+    width: 90%;
+}
+
+img:hover{
+    animation-name:bounce ;
+    animation-duration:2s;
+    animation-iteration-count:1;
+}
+
+button{
+    background-color: #ffffff;
+    padding: 5px;
+    transition-property: transform, box-shadow, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    box-shadow: 2px 8px 0 1px;
+}
+
+button:hover{
+    transform: scale(1.1);
+    background-color: #f13855;
+}
+
+
+
+/*I use :nth-child to avoid adding unnecessary classes*/
+section:nth-child(1){
+    background-color: coral;
+}
+
+section:nth-child(2){
+    background-color: #2edf74;
+}
+
+section:nth-child(3){
+    background-color: #12cbdd;
+}
+
+section:nth-child(4){
+    background-color: #ef53b0;
+}
+
+section:nth-child(5){
+    background-color: #ffd7d7;
+}
+/*this is de rotate animation it starts if the page is loaded*/
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*this is for the image animation that if you hover over the image it will bounce*/
+@keyframes bounce {
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(15px);
+    }
+
+}
+
+/*this is used for responsiveness*/
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card{
+        flex: 1 1 200px;
+        /*  flex grow 1 en flex shrink 1 en 200px is de flex basis de beginmaat  */
+    }
+
+
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card{
+        flex: 1 1 300px;
+        /*  flex grow 1 en flex shrink 1 en 300px is de flex basis de beginmaat  */
+    }
+}
